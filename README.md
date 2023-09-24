@@ -12,3 +12,8 @@ Two datasets are used in this project. The original files can be find by accessi
 ## Project
 
 ![Architecture](images/architecture.png)
+
+How to replicate:
+
+1. Download INEP and IBGE data files and upload IBGE files to a raw S3 bucket. Update the bucket policies so they can be publicly accessed.
+2. Run the ETL IBGE and ETL INEP files to clean the data and load them into Postgres tables.
