@@ -32,15 +32,17 @@ How to replicate:
 
 Some basic explorations were done just to try out GDS as a BI tool and to explore our two datasets. 
 
-**For the IBGE dataset**, we found 61.255 records and overall the information seems to be correct, as charts mostly confirm our already existing knowledge about the country.
+**For the IBGE dataset**
+
+We found 61.255 records and overall the information seems to be correct, as charts mostly confirm our already existing knowledge about the country.
 
 The southeast segion, for example, has the highest GDP in Brazil, accounting for more than all of the other regions together.
 
-![gds_region](images/gds_region.png)
+![gds_region](images/gdp_region.png)
 
 Similarly, the city of São Paulo itself was responsible for a quarter of the southest region GDP in 2020 and equals the sum of Rio, Brasilia and Belo Horizonte, the 2nd to 4th cities after São Paulo in the ranking.
 
-![gds_cities](images/gds_cities.png)
+![gds_cities](images/gdp_cities.png)
 
 It is interesting to see, however, a change in the rankings when looking at GDP per capita. The midwest and south of Brazil appears in the 1st and 2nd positions, most likely due to the lower population number at a first glance.
 
@@ -66,6 +68,6 @@ A curious fact is that the male gender performs better than the female gender in
 
 ![sex_differences](images/sex_differences.png)
 
-Finally, in a preliminary attempt to understand correlation between high GDP/capita and ENEM grades, the following chart with the top 10 essay cities was developed, but none of the highest GDP/capita cities show up in there, which points to a not so high correlation at the beggining.
+Finally, in a preliminary attempt to understand correlation between high GDP/capita and ENEM grades, the following chart with the top 10 essay cities was developed, but none of the highest GDP/capita cities show up in there, which points to a not so high correlation at the beggining. However, this correlation will be better explored in the next steps of the challenge.
 
 ![top_essay_cities](images/top_essay_cities.png)
