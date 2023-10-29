@@ -65,7 +65,7 @@ The first thing that is important to understand about the ENEM data is that the 
 
 ![enem_subscriptions](images/enem_subscriptions.png)
 
-In a basic exploration inside GDS, it is possible to filter the states and cities with the highest numbers of subscribed students. Comparing the top 10 cities with highest GDP and the one with the most subscribed students, we can see that cities from the north and northeast region tend to gain positions in the subscribed students versus big southeast cities such as Guarulhos, Campinas, Osasco, and Belo Horizonte.
+In a basic exploration inside GDS, it is possible to filter the states and cities with the highest numbers of subscribed students. Comparing the top 10 cities with the highest GDP and the one with the most subscribed students, we can see that cities from the north and northeast region tend to gain positions in the subscribed students versus big southeast cities such as Guarulhos, Campinas, Osasco, and Belo Horizonte.
 
 ![enem_subscriptions](images/gds_inep_basic_2022.png)
 
@@ -81,7 +81,7 @@ Finally, in a preliminary attempt to understand the correlation between high GDP
 
 The statistical analysis to answer the proposed question "What is the impact of the Gross Domestic Product (GDP) of municipalities on Education, present and future, considering the performance in the National Students Exam (ENEM)?" is contained inside the machine-learning notebook.
 
-In summary, a weak correlation (~0.10) between GDP/capita and GDP was found when investigating for both the total score of a candidate and also for individual test scores such as essay or math. The results can be observed in the correlation matrixes below:
+In summary, a weak correlation (~0.10) between GDP/capita and GDP was found when investigating both the total score of a candidate and also for individual test scores such as essay or math. The results can be observed in the correlation matrixes below:
 
 ![top_essay_cities](images/correlation_matrix_scores.png)
 
@@ -93,4 +93,4 @@ When removing outliers from both GDP and the ENEM datasets, the correlation for 
 
 Finally, when taking a look at the correlation at the state level, we found a higher correlation score of 0.20 for AM and the lowest of 0.03 for SC with most states floating around 0.1.
 
-These findings are according to one of the most well-known [previous researches](https://www.scielo.br/j/rap/a/ZHJFnmsrdgGH8cj6xHHwbKg/?lang=pt&format=pdf) on the subject, which hasn't find a strong link between these two variables.
+These findings are according to one of the most well-known [previous research](https://www.scielo.br/j/rap/a/ZHJFnmsrdgGH8cj6xHHwbKg/?lang=pt&format=pdf) on the subject, which hasn't find a strong link between these two variables.
