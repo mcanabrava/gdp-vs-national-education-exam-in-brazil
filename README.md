@@ -15,18 +15,23 @@ Two datasets are used in this project. The original files can be found accessing
 
 How to replicate:
 
-1. Download INEP and IBGE data files and upload IBGE files to a raw S3 bucket. Update the bucket policies so they can be publicly accessed.
-2. Run the ETL IBGE and ETL INEP files to clean the data and load them into Postgres tables. IBGE data should be quite fast to upload, but INEP data can take up to two hours depending on your machine OS and internet connection given the larger data size.
+**1. Download INEP and IBGE data files and upload IBGE files to a raw S3 bucket.** Update the bucket policies so they can be publicly accessed.
+
+**2. Run the ETL IBGE and ETL INEP files to clean the data and load them into Postgres tables.** IBGE data should be quite fast to upload, but INEP data can take up to two hours depending on your machine OS and internet connection given the larger data size.
 
 ![Jupyter](images/jupyter_upload.png)
 
-3. Airbyte Postgres Redshift #TODO
+**3. Airbyte Postgres Redshift**
+
+Create an Airbyte connection following airbyte basic instructions to send data from RS to Postgres
 
 
-4. DBT Modelling #TODO
+**4. DBT Modelling**
+
+Connect to DBT to leverage its capabilities
 
 
-5. Connect Redshift with Google Data Studio - it might be necessary using a SELECT * query for the connection instead of selecing the table via the UI to avoid connection errors as demonsrated in the image below
+**5. Connect Redshift with Google Data Studio** - it might be necessary using a SELECT * query for the connection instead of selecing the table via the UI to avoid connection errors as demonsrated in the image below
 
 ![gds_source](images/gds_source.png)
 
@@ -71,3 +76,21 @@ A curious fact is that the male gender performs better than the female gender in
 Finally, in a preliminary attempt to understand correlation between high GDP/capita and ENEM grades, the following chart with the top 10 essay cities was developed, but none of the highest GDP/capita cities show up in there, which points to a not so high correlation at the beggining. However, this correlation will be better explored in the next steps of the challenge.
 
 ![top_essay_cities](images/top_essay_cities.png)
+
+## Machine Learning
+
+The statistical analysis to answer the proposed question "What is the impact of the Gross Domestic Product (GDP) of municipalities on Education, present and future, considering the performance in the National Students Exam (ENEM)?" is contained inside the machine-learning notebook.
+
+In summary, a weak correlation (~0.10) between gdp/capita and gdp were found when investigating for both the total score of a candidate and also for individual test scores such as essay or math. The results can be observed in the correlation matrixes below:
+
+![top_essay_cities](images/correlation_matrix_scores.png)
+
+![top_essay_cities](images/correlation_matrix_total.png)
+
+When removing outliers from both gdp and the ENEM datasets, the correlation for the total score increases from 0.11 to 0.16
+
+![top_essay_cities](images/correlation_matrix_wo_outliers.png)
+
+Finally, when taking a look at the correlation at the state level, we found a higher correlation score of 0.20 for AM and the lowest of 0.03 for SC with most states floating around 0.1.
+
+These findings are according to one of the most well known [previous researches](https://www.scielo.br/j/rap/a/ZHJFnmsrdgGH8cj6xHHwbKg/?lang=pt&format=pdf) on the subject, which haven't find a strong link between these two variables.
