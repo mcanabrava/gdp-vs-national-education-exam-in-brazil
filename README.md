@@ -23,12 +23,20 @@ How to replicate:
 
 **3. Airbyte Postgres Redshift**
 
-Create an Airbyte connection following Airbyte's basic instructions to send data from RS to Postgres
+Create an Airbyte connection following Airbyte's basic instructions to send data from Postgres to RS. There are pre-built connectors for both the PostgreSQL instance and Redshift. No custom configuration is required.
+
+![Airbyte](images/airbyte.png)
 
 
 **4. DBT Modelling**
 
-Connect to DBT to leverage its capabilities
+Connect to DBT to leverage its capabilities. The dbt project can be found [here](https://github.com/jack3DX/dbt_gdp-vs-national-education-exam-in-brazil).
+
+There's a raw/staging layer directly linked to the source, bronze layer with testing for unique identifiers and accepted values whenever it's viable and a silver layer with granular master data. There's also documentation for bronze tables.
+
+Other than that, there's the use of a special macro to ensure custom schema names, as dbt has its own default configuration.
+
+![dbt](images/dbt.png)
 
 
 **5. Connect Redshift with Google Data Studio** - it might be necessary to use a SELECT * query for the connection instead of selecting the table via the UI to avoid connection errors as depicted in the image below
